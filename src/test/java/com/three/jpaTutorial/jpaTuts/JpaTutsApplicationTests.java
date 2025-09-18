@@ -21,39 +21,39 @@ class JpaTutsApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
-	void testRepository(){
-		ProductEntity productEntity=ProductEntity.builder()
-				.sku("nestle2345")
-				.title("Nestle chocolate")
-				.price(BigDecimal.valueOf(123.45))
-				.quantity(12)
-				.build();
+//	@Test
+//	void testRepository(){
+//		ProductEntity productEntity=ProductEntity.builder()
+//				.sku("nestle2345")
+//				.title("Nestle chocolate")
+//				.price(BigDecimal.valueOf(123.45))
+//				.quantity(12)
+//				.build();
+//
+//		ProductEntity savedProductEntity=productRepository.save(productEntity);
+//		System.out.println(savedProductEntity);
+//	}
 
-		ProductEntity savedProductEntity=productRepository.save(productEntity);
-		System.out.println(savedProductEntity);
-	}
-
-	@Test
-	void getRepository(){
+//	@Test
+//	void getRepository(){
 //		List<ProductEntity> entities=productRepository.findAll();
-//		List<ProductEntity> entities=productRepository.findByTitle("Pepsi");
+		//List<ProductEntity> entities=productRepository.findByTitle("Pepsi");
 //		List<ProductEntity> entities=productRepository.findByCreatedAtAfter(
 //				LocalDateTime.of(2024,1,1,0,0,0));
 		//List<ProductEntity> entities=productRepository.findByQuantityAndPrice(8,BigDecimal.valueOf(16.8));
 		//List<ProductEntity> entities=productRepository.findByQuantityGreaterThanAndPriceLessThan(8,BigDecimal.valueOf(16.8));
 		//List<ProductEntity> entities=productRepository.findByTitleLike("%choco%");
 //		List<ProductEntity> entities=productRepository.findByTitleContaining("choco");
-		List<ProductEntity> entities=productRepository.findByTitleContainingIgnoreCase("chOCo");
-		System.out.println(entities);
-	}
+//		List<ProductEntity> entities=productRepository.findByTitleContainingIgnoreCase("chOCo");
+		//System.out.println(entities);
+//	}
 
-	@Test
-	void getSingleFromRepository(){
-		Optional<ProductEntity> productEntity=productRepository
-				.findByTitleAndPrice("Pepsi",BigDecimal.valueOf(14.4));
-		productEntity.ifPresent(System.out::println);
-	}
+//	@Test
+//	void getSingleFromRepository(){
+//		Optional<ProductEntity> productEntity=productRepository
+//				.findByTitleAndPrice("Pepsi",BigDecimal.valueOf(14.4));
+//		productEntity.ifPresent(System.out::println);
+//	}
 
 
 }

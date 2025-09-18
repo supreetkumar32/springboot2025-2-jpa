@@ -1,6 +1,22 @@
-insert into sys.product_table(price,quantity,sku,title_x)
+insert into sys.product_table(price, quantity, sku, title_x)
 values
-(12.4,4,'parle734','Parle Biscuit'),
-(14.4,1,'pepsi123','Pepsi'),
-(16.8,8,'coca123','coca'),
-(16.4,3,'pa734','it');
+(25.5, 10, 'kitkat101', 'KitKat Chocolate'),
+(40.0, 5, 'lays202', 'Lays Chips'),
+(55.9, 2, 'dairymilk303', 'Dairy Milk Silk'),
+(18.0, 15, 'oreo404', 'Oreo Biscuit'),
+(22.5, 6, 'sprite505', 'Sprite'),
+(60.0, 3, 'thumsup606', 'Thums Up'),
+(75.0, 4, 'fanta707', 'Fanta'),
+(10.0, 20, 'maggie808', 'Maggi Noodles'),
+(30.0, 8, 'kurkure909', 'Kurkure'),
+(28.9, 12, 'redbull111', 'Red Bull'),
+(45.0, 7, 'mountdew222', 'Mountain Dew'),
+(32.5, 6, 'bingo333', 'Bingo Mad Angles'),
+(15.0, 18, 'goodday444', 'Good Day Biscuit'),
+(27.0, 9, '5star555', '5 Star Chocolate'),
+(48.0, 5, 'maaza666', 'Maaza'),
+(35.5, 4, 'mirinda777', 'Mirinda'),
+(12.0, 25, 'perk888', 'Perk Chocolate'),
+(50.0, 6, 'tropicana999', 'Tropicana Juice'),
+(42.0, 10, 'real100', 'Real Fruit Juice'),
+(20.0, 14, 'bourbon200', 'Bourbon Biscuit');
