@@ -24,24 +24,37 @@ public class ProductController {
         this.productRepository=productRepository;
     }
 
-    @GetMapping
-    public List<ProductEntity> getAllProducts(
-            @RequestParam(defaultValue ="id") String sortBy,
-            @RequestParam(defaultValue="0") Integer pageNumber){
-        //return productRepository.findBy(Sort.by(sortBy));
-        //return productRepository.findBy(Sort.by(Sort.Direction.DESC,sortBy,"price","quantity"));
-        //say we sort by title if title is same,then it will take price,if price is also same, it will take quantity
+//    @GetMapping
+//    public List<ProductEntity> getAllProducts(
+//            @RequestParam(defaultValue ="id") String sortBy,
+//            @RequestParam(defaultValue="0") Integer pageNumber){
+//        //return productRepository.findBy(Sort.by(sortBy));
+//        //return productRepository.findBy(Sort.by(Sort.Direction.DESC,sortBy,"price","quantity"));
+//        //say we sort by title if title is same,then it will take price,if price is also same, it will take quantity
+//
+////        return productRepository.findBy(Sort.by(
+////                Sort.Order.desc(sortBy),
+////                Sort.Order.asc("title")//if any tie is there it will sort by title in asc order
+////        ));
+//
+//        //http://localhost:8080/products?pageNumber=1
+////        Pageable pageable= PageRequest.of(pageNumber,PAGE_SIZE);
+//        //http://localhost:8080/products?sortBy=quantity&pageNumber=1
+//        Pageable pageable= PageRequest.of(pageNumber,PAGE_SIZE,Sort.by(sortBy));
+//        return productRepository.findAll(pageable).getContent();
+//
+//    }
 
-//        return productRepository.findBy(Sort.by(
-//                Sort.Order.desc(sortBy),
-//                Sort.Order.asc("title")//if any tie is there it will sort by title in asc order
-//        ));
+//http://localhost:8080/products?sortBy=quantity&pageNumber=0&title=b
+@GetMapping
+public List<ProductEntity> getAllProducts(
+        @RequestParam(defaultValue ="")String title,
+        @RequestParam(defaultValue ="id") String sortBy,
+        @RequestParam(defaultValue="0") Integer pageNumber){
 
-        //http://localhost:8080/products?pageNumber=1
-//        Pageable pageable= PageRequest.of(pageNumber,PAGE_SIZE);
-        //http://localhost:8080/products?sortBy=quantity&pageNumber=1
-        Pageable pageable= PageRequest.of(pageNumber,PAGE_SIZE,Sort.by(sortBy));
-        return productRepository.findAll(pageable).getContent();
-
-    }
+    return productRepository.findByTitleContainingIgnoreCase(
+            title,
+            PageRequest.of(pageNumber,PAGE_SIZE,Sort.by(sortBy))
+    );
+}
 }
